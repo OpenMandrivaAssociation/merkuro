@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: merkuro
-Version: 23.08.3
+Version: 23.08.4
 Release: 1
 %if 0%{?git:1}
 Source0:        https://invent.kde.org/pim/%{name}/-/archive/master/%{name}-master.tar.bz2
