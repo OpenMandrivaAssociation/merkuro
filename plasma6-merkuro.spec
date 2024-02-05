@@ -51,6 +51,7 @@ BuildRequires: cmake(KPim6AkonadiCalendar)
 BuildRequires: cmake(KPim6MailTransport)
 BuildRequires: cmake(Gpgmepp)
 BuildRequires: cmake(KF6TextTemplate)
+BuildRequires: cmake(KPim6MimeTreeParserCore)
 
 %description
 A calendar application using Akonadi to sync with external services
