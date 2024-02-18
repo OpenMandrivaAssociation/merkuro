@@ -1,12 +1,23 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma6-merkuro
-Version: 24.01.95
-Release: 1
+Version: 24.01.96
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
+%else
 Source0:        https://invent.kde.org/pim/merkuro/-/archive/master/merkuro-master.tar.bz2
+%endif
+%else
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/merkuro-%{version}.tar.xz
+%endif
 %endif
 Summary: Calendar application to sync with external services (Nextcloud, GMail, ...)
 URL: https://invent.kde.org/pim/merkuro
@@ -58,7 +69,7 @@ A calendar application using Akonadi to sync with external services
 (Nextcloud, GMail, ...)
 
 %prep
-%autosetup -p1 -n merkuro-%{version}
+%autosetup -p1 -n merkuro-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
