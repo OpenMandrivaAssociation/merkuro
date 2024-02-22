@@ -48,6 +48,7 @@ BuildRequires: cmake(KF6IconThemes)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6Kirigami2)
 BuildRequires: cmake(Plasma) >= 6.0.0
+BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6KIO)
 BuildRequires: cmake(KF6QQC2DesktopStyle)
 BuildRequires: cmake(KF6WindowSystem)
