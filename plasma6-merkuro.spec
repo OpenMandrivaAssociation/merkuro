@@ -4,8 +4,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma6-merkuro
-Version: 24.02.0
-Release: %{?git:0.%{git}.}2
+Version: 24.02.1
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
