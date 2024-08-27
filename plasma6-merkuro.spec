@@ -7,17 +7,9 @@ Name: plasma6-merkuro
 Version: 24.08.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
-%if 0%{?git:1}
-Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
-%else
-Source0:        https://invent.kde.org/pim/merkuro/-/archive/master/merkuro-master.tar.bz2
-%endif
-%else
-%if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/merkuro-%{version}.tar.xz
-%endif
 %endif
 Summary: Calendar application to sync with external services (Nextcloud, GMail, ...)
 URL: https://invent.kde.org/pim/merkuro
@@ -47,6 +39,7 @@ BuildRequires: cmake(KF6I18n)
 BuildRequires: cmake(KF6IconThemes)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6Kirigami2)
+BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(Plasma) >= 6.0.0
 BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6KIO)
