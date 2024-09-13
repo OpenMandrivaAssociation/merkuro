@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: plasma6-merkuro
-Version: 24.08.0
+Version: 24.08.1
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
@@ -90,6 +90,6 @@ A calendar application using Akonadi to sync with external services
 %{_datadir}/qlogging-categories6/merkuro.contact.categories
 %{_datadir}/knotifications6/merkuro.mail.notifyrc
 %{_libdir}/libMerkuroComponents.so*
-%{_libdir}/libmerkuro_contact_plugin.so*
+%{_libdir}/libmerkuro_contact.so*
 %{_qtdir}/qml/org/kde/akonadi/*
 %{_qtdir}/qml/org/kde/merkuro
