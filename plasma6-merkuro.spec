@@ -41,6 +41,7 @@ BuildRequires: cmake(KF6IconThemes)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6Kirigami2)
 BuildRequires: cmake(KF6Notifications)
+BuildRequires: cmake(KF6Holidays)
 BuildRequires: cmake(Plasma) >= 6.0.0
 BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6KIO)
