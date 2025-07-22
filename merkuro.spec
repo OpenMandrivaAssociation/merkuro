@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: merkuro
-Version: 25.04.0
+Version: 25.04.3
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
@@ -15,7 +15,6 @@ Summary: Calendar application to sync with external services (Nextcloud, GMail, 
 URL: https://invent.kde.org/pim/merkuro
 License: GPL
 Group: User Interface/Desktops
-BuildRequires: cmake ninja
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
@@ -61,24 +60,16 @@ BuildRequires: cmake(Gpgmepp)
 BuildRequires: cmake(KF6TextTemplate)
 BuildRequires: cmake(KPim6MimeTreeParserCore)
 
+%rename plasma6-merkuro
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 A calendar application using Akonadi to sync with external services
 (Nextcloud, GMail, ...)
 
-%prep
-%autosetup -p1 -n merkuro-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang merkuro --all-name
-
-%files -f merkuro.lang
+%files -f %{name}.lang
 %{_bindir}/merkuro-calendar
 %{_bindir}/merkuro-contact
 %{_bindir}/merkuro-mail
