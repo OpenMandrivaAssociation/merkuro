@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: merkuro
-Version: 25.04.3
+Version: 25.08.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{gitbranchd}.tar.bz2#/merkuro-%{git}.tar.bz2
@@ -79,12 +79,10 @@ A calendar application using Akonadi to sync with external services
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/metainfo/*
 %{_datadir}/plasma/plasmoids/org.kde.merkuro.contact.applet
-%{_datadir}/qlogging-categories6/akonadi.quick.categories
 %{_datadir}/qlogging-categories6/merkuro.categories
 %{_datadir}/qlogging-categories6/merkuro.contact.categories
 %{_datadir}/knotifications6/merkuro.mail.notifyrc
 %{_libdir}/libMerkuroComponents.so*
 %{_libdir}/libmerkuro_contact.so*
-%{_qtdir}/qml/org/kde/akonadi/*
 %{_qtdir}/qml/org/kde/merkuro
 %{_datadir}/applications/org.kde.merkuro.desktop
