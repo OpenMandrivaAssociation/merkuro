@@ -1,0 +1,22 @@
+diff -ruN a/src/contacts/qml/private/AddressBookMenu.qml b/src/contacts/qml/private/AddressBookMenu.qml
+--- a/src/contacts/qml/private/AddressBookMenu.qml	2026-11-03 14:08:42.000000000 +0100
++++ b/src/contacts/qml/private/AddressBookMenu.qml	2026-11-06 03:08:05.860982847 +0100
+@@ -7,7 +7,6 @@
+ import QtQuick.Dialogs
+ import QtQuick.Controls as QQC2
+ import org.kde.kirigami as Kirigami
+-import org.kde.merkuro as Merkuro
+ import org.kde.merkuro.contact
+ import org.kde.akonadi as Akonadi
+ 
+diff -ruN a/src/mail/qml/mailboxselector/MailBoxListPage.qml b/src/mail/qml/mailboxselector/MailBoxListPage.qml
+--- a/src/mail/qml/mailboxselector/MailBoxListPage.qml	2026-11-03 14:08:42.000000000 +0100
++++ b/src/mail/qml/mailboxselector/MailBoxListPage.qml	2026-11-06 03:08:05.861040558 +0100
+@@ -4,7 +4,6 @@
+ import QtQuick
+ 
+ import org.kde.kirigami as Kirigami
+-import org.kde.raven
+ 
+ Kirigami.ScrollablePage {
+     id: root

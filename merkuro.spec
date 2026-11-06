@@ -11,6 +11,10 @@ Source0:	https://invent.kde.org/pim/merkuro/-/archive/%{gitbranch}/merkuro-%{git
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/merkuro-%{version}.tar.xz
 %endif
+# AddressBookMenu.qml imports org.kde.merkuro, which exists only in the Flatpak
+# launcher. MailBoxListPage.qml imports org.kde.raven, but MailBoxList lives in
+# org.kde.merkuro.mail. Neither module is packaged.
+Patch0:		merkuro-26.08.3-drop-unused-qml-imports.patch
 Summary: Calendar application to sync with external services (Nextcloud, GMail, ...)
 URL: https://invent.kde.org/pim/merkuro
 License: GPL
